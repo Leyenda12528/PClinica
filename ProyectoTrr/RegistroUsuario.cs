@@ -35,8 +35,21 @@ namespace ProyectoTr
                 btnAdd.Text = "Modificar";
                 PnlD.Show();
                 user.Id_user = v;
-                consul.getDatosUser(user);                
+                consul.getDatosUser(user);
+                MostrarDatos();
             }
+        }
+
+        private void MostrarDatos()
+        {
+            txtName.Text = user.Nombre;
+            txtApel.Text = user.Apellido;
+            txtEdad.Text = user.Edad.ToString();
+            txtTel.Text = user.Telefono;
+            CBEspel.SelectedIndex = user.ID_especialidad;
+            txtUser.Text = user.User;
+            txtPass.Text = user.Pass;
+            CBEstado.SelectedIndex = user.ID_estdo;
         }
 
         private void Load()
@@ -58,21 +71,26 @@ namespace ProyectoTr
                 && txtTel.Text.Length > 0  && CBEspel.Text.Length > 0
                 && txtUser.Text.Length > 0 && txtPass.Text.Length > 0
                 && h.TelFormat(txtTel.Text))
-            {
-                if (consul.UserExits(txtUser.Text.Trim()) == false)
-                {
-                    pasarDatos();
-                    if (v == -1) 
+            {                
+               pasarDatos();
+               if (v == -1)
+               {
+                    if (consul.UserExits(txtUser.Text.Trim()) == false)
                     {
                         consul.AddUser(user);
                         Limpiar();
                     }
-                    else
-                    {
-
-                    }
+                    else MessageBox.Show("ERROR\n\nYa existe ese Usuario en la Base de datos");
                 }
-                else MessageBox.Show("ERROR\n\nYa existe ese Usuario en la Base de datos");
+                else
+                {
+                    if (CBEstado.SelectedIndex == 0 || CBEstado.SelectedIndex == 1)
+                    {
+                       consul.UpdateUser(user);
+                    }
+                    else MessageBox.Show("ERROR\n\nEscoga un estado para el Usuario");
+                }
+
             }
             else MessageBox.Show("ERROR\n\nLlene todos los campos requeridos correctamente");
         }
@@ -98,7 +116,8 @@ namespace ProyectoTr
             user.ID_especialidad = CBEspel.SelectedIndex;
             user.User = txtUser.Text.Trim();
             user.Pass = txtPass.Text.Trim();
-            user.ID_estdo = 0;
+            if (v == -1) user.ID_estdo = 0;
+            else user.ID_estdo = CBEstado.SelectedIndex;
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)

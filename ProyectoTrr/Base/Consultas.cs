@@ -69,6 +69,35 @@ namespace ProyectoTrr.Base
             }
         }
 
+        public void UpdateUser(Usuario user)
+        {
+            try
+            {
+                sql = "update usuarios set nombre = @n, apellido = @ap, edad = @ed, telefono = @tel,"
+                    + " usuario = @us, pass = @pass, id_especial = @idesp, id_estado_user = @idest"
+                    + " where id_user = @id";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@n", user.Nombre));
+                comando1.Parameters.Add(new SqlParameter("@ap", user.Apellido));
+                comando1.Parameters.Add(new SqlParameter("@ed", user.Edad));
+                comando1.Parameters.Add(new SqlParameter("@tel", user.Telefono));
+                comando1.Parameters.Add(new SqlParameter("@us", user.User));
+                comando1.Parameters.Add(new SqlParameter("@pass", user.Pass));
+                comando1.Parameters.Add(new SqlParameter("@idesp", user.ID_especialidad));
+                comando1.Parameters.Add(new SqlParameter("@idest", user.ID_estdo));
+                comando1.Parameters.Add(new SqlParameter("@id", user.Id_user));
+                con.Open();
+                comando1.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Usuario Modificado");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
         public void getEspecialidad(ComboBox cBEspel)
         {
             try
