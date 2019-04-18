@@ -32,23 +32,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddI = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBEspel = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddI)).BeginInit();
@@ -61,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 322);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(378, 39);
+            this.panel1.Size = new System.Drawing.Size(528, 39);
             this.panel1.TabIndex = 34;
             // 
             // panel2
@@ -69,7 +68,7 @@
             this.panel2.Controls.Add(this.btnAddI);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(228, 0);
+            this.panel2.Location = new System.Drawing.Point(378, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 39);
             this.panel2.TabIndex = 3;
@@ -102,96 +101,82 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // comboBox1
+            // CBEspel
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 209);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 33;
+            this.CBEspel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.CBEspel.FormattingEnabled = true;
+            this.CBEspel.Location = new System.Drawing.Point(139, 194);
+            this.CBEspel.Name = "CBEspel";
+            this.CBEspel.Size = new System.Drawing.Size(121, 24);
+            this.CBEspel.TabIndex = 33;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            this.label5.Location = new System.Drawing.Point(25, 287);
+            this.label5.Location = new System.Drawing.Point(25, 272);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 32;
             this.label5.Text = "Contraseña";
             // 
-            // textBox5
+            // txtPass
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(139, 284);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 22);
-            this.textBox5.TabIndex = 31;
+            this.txtPass.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtPass.Location = new System.Drawing.Point(139, 269);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(121, 22);
+            this.txtPass.TabIndex = 31;
+            this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            this.label6.Location = new System.Drawing.Point(25, 255);
+            this.label6.Location = new System.Drawing.Point(25, 240);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 17);
             this.label6.TabIndex = 30;
             this.label6.Text = "Usuario";
             // 
-            // textBox6
+            // txtUser
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox6.Location = new System.Drawing.Point(139, 252);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(216, 22);
-            this.textBox6.TabIndex = 29;
+            this.txtUser.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtUser.Location = new System.Drawing.Point(139, 237);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(216, 22);
+            this.txtUser.TabIndex = 29;
+            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            this.label7.Location = new System.Drawing.Point(25, 209);
+            this.label7.Location = new System.Drawing.Point(25, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 28;
             this.label7.Text = "Especialidad";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            this.label8.Location = new System.Drawing.Point(25, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 17);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Direccion";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox8.Location = new System.Drawing.Point(139, 174);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(216, 22);
-            this.textBox8.TabIndex = 26;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
-            this.label3.Location = new System.Drawing.Point(25, 144);
+            this.label3.Location = new System.Drawing.Point(25, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 25;
             this.label3.Text = "Telefono";
             // 
-            // textBox3
+            // txtTel
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(139, 141);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 22);
-            this.textBox3.TabIndex = 24;
+            this.txtTel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtTel.Location = new System.Drawing.Point(139, 151);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(113, 22);
+            this.txtTel.TabIndex = 24;
             // 
             // label4
             // 
@@ -203,13 +188,14 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Edad";
             // 
-            // textBox4
+            // txtEdad
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(139, 109);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(80, 22);
-            this.textBox4.TabIndex = 22;
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtEdad.Location = new System.Drawing.Point(139, 109);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(80, 22);
+            this.txtEdad.TabIndex = 22;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // label2
             // 
@@ -221,13 +207,14 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Apellidos";
             // 
-            // textBox2
+            // txtApel
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(139, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 22);
-            this.textBox2.TabIndex = 20;
+            this.txtApel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtApel.Location = new System.Drawing.Point(139, 69);
+            this.txtApel.Name = "txtApel";
+            this.txtApel.Size = new System.Drawing.Size(236, 22);
+            this.txtApel.TabIndex = 20;
+            this.txtApel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApel_KeyPress);
             // 
             // label1
             // 
@@ -239,13 +226,14 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Nombres";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(139, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 22);
-            this.textBox1.TabIndex = 18;
+            this.txtName.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F);
+            this.txtName.Location = new System.Drawing.Point(139, 37);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(236, 22);
+            this.txtName.TabIndex = 18;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // label9
             // 
@@ -257,29 +245,36 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "Usuario";
             // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(417, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(111, 322);
+            this.panel3.TabIndex = 36;
+            // 
             // RegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 361);
+            this.ClientSize = new System.Drawing.Size(528, 361);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CBEspel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtApel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroUsuario";
             this.Text = "RegistroUsuario";
@@ -294,25 +289,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBEspel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuImageButton btnAddI;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Panel panel3;
     }
 }

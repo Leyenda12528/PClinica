@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PnlContenedor = new System.Windows.Forms.Panel();
-            this.CBIDPAc = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnAddI = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBIDPAc = new System.Windows.Forms.ComboBox();
+            this.PnlContenedor = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddI)).BeginInit();
@@ -51,32 +51,6 @@
             this.panel1.Size = new System.Drawing.Size(428, 49);
             this.panel1.TabIndex = 0;
             // 
-            // PnlContenedor
-            // 
-            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlContenedor.Location = new System.Drawing.Point(0, 49);
-            this.PnlContenedor.Name = "PnlContenedor";
-            this.PnlContenedor.Size = new System.Drawing.Size(428, 273);
-            this.PnlContenedor.TabIndex = 1;
-            // 
-            // CBIDPAc
-            // 
-            this.CBIDPAc.FormattingEnabled = true;
-            this.CBIDPAc.Location = new System.Drawing.Point(105, 17);
-            this.CBIDPAc.Name = "CBIDPAc";
-            this.CBIDPAc.Size = new System.Drawing.Size(139, 21);
-            this.CBIDPAc.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(8, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID Paciente";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnAddI);
@@ -86,6 +60,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 49);
             this.panel3.TabIndex = 3;
+            // 
+            // btnAddI
+            // 
+            this.btnAddI.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddI.Image = global::ProyectoTrr.Properties.Resources.icons8_información_50;
+            this.btnAddI.ImageActive = null;
+            this.btnAddI.Location = new System.Drawing.Point(0, 0);
+            this.btnAddI.Name = "btnAddI";
+            this.btnAddI.Size = new System.Drawing.Size(45, 49);
+            this.btnAddI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddI.TabIndex = 6;
+            this.btnAddI.TabStop = false;
+            this.btnAddI.Zoom = 10;
+            this.btnAddI.Click += new System.EventHandler(this.btnAddI_Click);
             // 
             // btnAdd
             // 
@@ -100,20 +89,31 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnAddI
+            // label1
             // 
-            this.btnAddI.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddI.Image = global::ProyectoTrr.Properties.Resources.icons8_visible_24;
-            this.btnAddI.ImageActive = null;
-            this.btnAddI.Location = new System.Drawing.Point(0, 0);
-            this.btnAddI.Name = "btnAddI";
-            this.btnAddI.Size = new System.Drawing.Size(45, 49);
-            this.btnAddI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAddI.TabIndex = 6;
-            this.btnAddI.TabStop = false;
-            this.btnAddI.Zoom = 10;
-            this.btnAddI.Click += new System.EventHandler(this.btnAddI_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ID Paciente";
+            // 
+            // CBIDPAc
+            // 
+            this.CBIDPAc.FormattingEnabled = true;
+            this.CBIDPAc.Location = new System.Drawing.Point(105, 17);
+            this.CBIDPAc.Name = "CBIDPAc";
+            this.CBIDPAc.Size = new System.Drawing.Size(139, 21);
+            this.CBIDPAc.TabIndex = 0;
+            // 
+            // PnlContenedor
+            // 
+            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlContenedor.Location = new System.Drawing.Point(0, 49);
+            this.PnlContenedor.Name = "PnlContenedor";
+            this.PnlContenedor.Size = new System.Drawing.Size(428, 273);
+            this.PnlContenedor.TabIndex = 1;
             // 
             // ModificarPaciente
             // 

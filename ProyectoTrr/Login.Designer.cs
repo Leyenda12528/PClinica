@@ -80,7 +80,7 @@
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Image = global::ProyectoTrr.Properties.Resources.icons8_cerrar_ventana_50;
+            this.btnCerrar.Image = global::ProyectoTrr.Properties.Resources.icons8_cerrar_ventana_501;
             this.btnCerrar.ImageActive = null;
             this.btnCerrar.Location = new System.Drawing.Point(467, 0);
             this.btnCerrar.Name = "btnCerrar";

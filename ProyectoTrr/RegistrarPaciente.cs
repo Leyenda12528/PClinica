@@ -140,7 +140,7 @@ namespace ProyectoTr
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsSeparator(e.KeyChar))
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
                 e.Handled = false;
             else
                 e.Handled = true;

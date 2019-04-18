@@ -22,6 +22,96 @@ namespace ProyectoTrr.Base
             con = new SqlConnection(Conexion.cadena);
         }
 
+        internal void getEspecialidad(ComboBox cBEspel)
+        {
+            try
+            {
+                sql = "select Nombre_espec from especialidad";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                reader = comando1.ExecuteReader();
+                while (reader.Read())
+                    cBEspel.Items.Add(reader.GetValue(0));
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        public void getNewIdUser(Usuario user)
+        {
+            try
+            {
+                sql = "select count(*) from usuarios";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                reader = comando1.ExecuteReader();
+                if (reader.Read())
+                    user.Id_user = Convert.ToInt32(reader.GetValue(0));
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        public void AddUser(Usuario user)
+        {
+            try
+            {
+                sql = "insert into usuarios (id_user, nombre, apellido, edad, telefono, "
+                    + "usuario, pass, id_especial, id_estado_user) "
+                    + "values (@id, @n, @a, @ed, @tel, @us, @pass, @espel, @estado)";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@id", user.Id_user));
+                comando1.Parameters.Add(new SqlParameter("@n", user.Nombre));
+                comando1.Parameters.Add(new SqlParameter("@a", user.Apellido));
+                comando1.Parameters.Add(new SqlParameter("@ed", user.Edad));
+                comando1.Parameters.Add(new SqlParameter("@tel", user.Telefono));
+                comando1.Parameters.Add(new SqlParameter("@us", user.User));
+                comando1.Parameters.Add(new SqlParameter("@pass", user.Pass));
+                comando1.Parameters.Add(new SqlParameter("@espel", user.ID_especialidad));
+                comando1.Parameters.Add(new SqlParameter("@estado", user.ID_estdo));
+                con.Open();
+                comando1.ExecuteNonQuery();
+                con.Close();                
+                MessageBox.Show("Usuario Agregado!!");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        public bool UserExits(string v)
+        {
+            try
+            {
+                sql = "select  id_user from usuarios where usuario = @user";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@user", v));
+                con.Open();
+                reader = comando1.ExecuteReader();
+                Boolean var = false;
+                if (reader.Read())                                    
+                    var = true;
+                else var = false;
+                con.Close();
+                return var;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
         public bool exist(string user, string pass, Usuario usuario)
         {
             try

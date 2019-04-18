@@ -12,12 +12,18 @@ namespace ProyectoTrr.Datos
         private String apellido;
         private int id_user;
         private int edad;
-        private String telefono;
-        private String direccion;
+        private String telefono;        
         private String usuario;
         private String pass;
         private int id_especialidad;
         private String especialidad;
+        private int id_estado;
+
+        public int ID_estdo
+        {
+            get { return id_estado; }
+            set { id_estado = value; }
+        }
 
         public String Especialidad
         {
@@ -42,12 +48,6 @@ namespace ProyectoTrr.Datos
         {
             get { return usuario; }
             set { usuario = value; }
-        }
-
-        public String Direccion
-        {
-            get { return direccion; }
-            set { direccion = value; }
         }
 
         public String Telefono
