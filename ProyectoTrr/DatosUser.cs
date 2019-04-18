@@ -31,12 +31,12 @@ namespace ProyectoTrr
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            mostrar(new RegistroUsuario());
+            mostrar(new RegistroUsuario(-1));
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-
+            mostrar(new ModifyUser());
         }
     }
 }

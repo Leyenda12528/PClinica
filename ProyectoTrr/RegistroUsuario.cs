@@ -17,18 +17,33 @@ namespace ProyectoTr
         private Consultas consul = new Consultas();
         private Usuario user = new Usuario();
         private Help1 h = new Help1();
+        private int v;
 
         public RegistroUsuario()
         {
+            InitializeComponent();            
+        }
+
+        public RegistroUsuario(int v)
+        {
+            this.v = v;
             InitializeComponent();
             Load();
+            PnlD.Hide();
+            if (v != -1)
+            {
+                btnAdd.Text = "Modificar";
+                PnlD.Show();
+                user.Id_user = v;
+                consul.getDatosUser(user);                
+            }
         }
 
         private void Load()
         {
             CBEspel.Items.Clear();
             consul.getEspecialidad(CBEspel);
-            consul.getNewIdUser(user);
+            if (v == -1) consul.getNewIdUser(user);
         }
 
         //*
@@ -47,8 +62,15 @@ namespace ProyectoTr
                 if (consul.UserExits(txtUser.Text.Trim()) == false)
                 {
                     pasarDatos();
-                    consul.AddUser(user);
-                    Limpiar();
+                    if (v == -1) 
+                    {
+                        consul.AddUser(user);
+                        Limpiar();
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else MessageBox.Show("ERROR\n\nYa existe ese Usuario en la Base de datos");
             }

@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.PnlBarra = new System.Windows.Forms.Panel();
+            this.btnExpandir = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnMinizar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.btnInicioI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnListarPacientes = new System.Windows.Forms.Button();
+            this.btnListarPacientesI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnAtenderPacientes = new System.Windows.Forms.Button();
+            this.btnAtenderPacientesI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnConsultas = new System.Windows.Forms.Button();
+            this.btnConsultasI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnAddUserI = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddPaciente = new System.Windows.Forms.Button();
-            this.PnlContenedor = new System.Windows.Forms.Panel();
-            this.btnInicioI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnListarPacientesI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnAtenderPacientesI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnConsultasI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnAddUserI = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnAddPacienteI = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnExpandir = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMinizar = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCerrar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.PnlContenedor = new System.Windows.Forms.Panel();
             this.PnlBarra.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnListarPacientesI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtenderPacientesI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConsultasI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddUserI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPacienteI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.pnlMenu.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnListarPacientesI)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtenderPacientesI)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConsultasI)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddUserI)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPacienteI)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlBarra
@@ -87,6 +87,21 @@
             this.PnlBarra.Size = new System.Drawing.Size(703, 36);
             this.PnlBarra.TabIndex = 0;
             this.PnlBarra.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlBarra_MouseMove);
+            // 
+            // btnExpandir
+            // 
+            this.btnExpandir.BackColor = System.Drawing.Color.Transparent;
+            this.btnExpandir.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExpandir.Image = global::ProyectoTrr.Properties.Resources.icons8_menú_64;
+            this.btnExpandir.ImageActive = null;
+            this.btnExpandir.Location = new System.Drawing.Point(0, 0);
+            this.btnExpandir.Name = "btnExpandir";
+            this.btnExpandir.Size = new System.Drawing.Size(45, 36);
+            this.btnExpandir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExpandir.TabIndex = 4;
+            this.btnExpandir.TabStop = false;
+            this.btnExpandir.Zoom = 10;
+            this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);
             // 
             // lblEspecialidad
             // 
@@ -107,6 +122,36 @@
             this.lblNombre.Size = new System.Drawing.Size(67, 19);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre";
+            // 
+            // btnMinizar
+            // 
+            this.btnMinizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinizar.Image = global::ProyectoTrr.Properties.Resources.Minimizar;
+            this.btnMinizar.ImageActive = null;
+            this.btnMinizar.Location = new System.Drawing.Point(613, 0);
+            this.btnMinizar.Name = "btnMinizar";
+            this.btnMinizar.Size = new System.Drawing.Size(45, 36);
+            this.btnMinizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinizar.TabIndex = 1;
+            this.btnMinizar.TabStop = false;
+            this.btnMinizar.Zoom = 10;
+            this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrar.Image = global::ProyectoTrr.Properties.Resources.icons8_apagar_filled_50__1_;
+            this.btnCerrar.ImageActive = null;
+            this.btnCerrar.Location = new System.Drawing.Point(658, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(45, 36);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Zoom = 10;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pnlMenu
             // 
@@ -146,6 +191,21 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
+            // btnInicioI
+            // 
+            this.btnInicioI.BackColor = System.Drawing.Color.Transparent;
+            this.btnInicioI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnInicioI.Image = global::ProyectoTrr.Properties.Resources.icons8_casa_40;
+            this.btnInicioI.ImageActive = null;
+            this.btnInicioI.Location = new System.Drawing.Point(0, 0);
+            this.btnInicioI.Name = "btnInicioI";
+            this.btnInicioI.Size = new System.Drawing.Size(45, 44);
+            this.btnInicioI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnInicioI.TabIndex = 5;
+            this.btnInicioI.TabStop = false;
+            this.btnInicioI.Zoom = 10;
+            this.btnInicioI.Click += new System.EventHandler(this.btnInicioI_Click);
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnListarPacientes);
@@ -168,6 +228,21 @@
             this.btnListarPacientes.Text = "Pacientes";
             this.btnListarPacientes.UseVisualStyleBackColor = true;
             this.btnListarPacientes.Click += new System.EventHandler(this.btnListarPacientes_Click);
+            // 
+            // btnListarPacientesI
+            // 
+            this.btnListarPacientesI.BackColor = System.Drawing.Color.Transparent;
+            this.btnListarPacientesI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnListarPacientesI.Image = global::ProyectoTrr.Properties.Resources.icons8_revisión_de_salud_50;
+            this.btnListarPacientesI.ImageActive = null;
+            this.btnListarPacientesI.Location = new System.Drawing.Point(0, 0);
+            this.btnListarPacientesI.Name = "btnListarPacientesI";
+            this.btnListarPacientesI.Size = new System.Drawing.Size(45, 44);
+            this.btnListarPacientesI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnListarPacientesI.TabIndex = 5;
+            this.btnListarPacientesI.TabStop = false;
+            this.btnListarPacientesI.Zoom = 10;
+            this.btnListarPacientesI.Click += new System.EventHandler(this.btnListarPacientesI_Click);
             // 
             // panel4
             // 
@@ -192,6 +267,21 @@
             this.btnAtenderPacientes.UseVisualStyleBackColor = true;
             this.btnAtenderPacientes.Click += new System.EventHandler(this.btnAtenderPacientes_Click);
             // 
+            // btnAtenderPacientesI
+            // 
+            this.btnAtenderPacientesI.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtenderPacientesI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAtenderPacientesI.Image = global::ProyectoTrr.Properties.Resources.icons8_charla_varonil_40;
+            this.btnAtenderPacientesI.ImageActive = null;
+            this.btnAtenderPacientesI.Location = new System.Drawing.Point(0, 0);
+            this.btnAtenderPacientesI.Name = "btnAtenderPacientesI";
+            this.btnAtenderPacientesI.Size = new System.Drawing.Size(45, 44);
+            this.btnAtenderPacientesI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAtenderPacientesI.TabIndex = 5;
+            this.btnAtenderPacientesI.TabStop = false;
+            this.btnAtenderPacientesI.Zoom = 10;
+            this.btnAtenderPacientesI.Click += new System.EventHandler(this.btnAtenderPacientesI_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnConsultas);
@@ -215,6 +305,21 @@
             this.btnConsultas.UseVisualStyleBackColor = true;
             this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
+            // btnConsultasI
+            // 
+            this.btnConsultasI.BackColor = System.Drawing.Color.Transparent;
+            this.btnConsultasI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnConsultasI.Image = global::ProyectoTrr.Properties.Resources.icons8_hospital_48;
+            this.btnConsultasI.ImageActive = null;
+            this.btnConsultasI.Location = new System.Drawing.Point(0, 0);
+            this.btnConsultasI.Name = "btnConsultasI";
+            this.btnConsultasI.Size = new System.Drawing.Size(45, 44);
+            this.btnConsultasI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnConsultasI.TabIndex = 5;
+            this.btnConsultasI.TabStop = false;
+            this.btnConsultasI.Zoom = 10;
+            this.btnConsultasI.Click += new System.EventHandler(this.btnConsultasI_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnAddUser);
@@ -234,9 +339,24 @@
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(152, 44);
             this.btnAddUser.TabIndex = 6;
-            this.btnAddUser.Text = "Agregar Usuario";
+            this.btnAddUser.Text = "Mant. Usuarios";
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            // 
+            // btnAddUserI
+            // 
+            this.btnAddUserI.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddUserI.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddUserI.Image = global::ProyectoTrr.Properties.Resources.icons8_gerente_64__1_;
+            this.btnAddUserI.ImageActive = null;
+            this.btnAddUserI.Location = new System.Drawing.Point(0, 0);
+            this.btnAddUserI.Name = "btnAddUserI";
+            this.btnAddUserI.Size = new System.Drawing.Size(45, 44);
+            this.btnAddUserI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddUserI.TabIndex = 5;
+            this.btnAddUserI.TabStop = false;
+            this.btnAddUserI.Zoom = 10;
+            this.btnAddUserI.Click += new System.EventHandler(this.btnAddUserI_Click);
             // 
             // panel1
             // 
@@ -261,91 +381,6 @@
             this.btnAddPaciente.UseVisualStyleBackColor = true;
             this.btnAddPaciente.Click += new System.EventHandler(this.btnAddPaciente_Click);
             // 
-            // PnlContenedor
-            // 
-            this.PnlContenedor.BackgroundImage = global::ProyectoTrr.Properties.Resources.Logo;
-            this.PnlContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlContenedor.Location = new System.Drawing.Point(197, 36);
-            this.PnlContenedor.Name = "PnlContenedor";
-            this.PnlContenedor.Size = new System.Drawing.Size(506, 445);
-            this.PnlContenedor.TabIndex = 2;
-            // 
-            // btnInicioI
-            // 
-            this.btnInicioI.BackColor = System.Drawing.Color.Transparent;
-            this.btnInicioI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnInicioI.Image = global::ProyectoTrr.Properties.Resources.icons8_casa_40;
-            this.btnInicioI.ImageActive = null;
-            this.btnInicioI.Location = new System.Drawing.Point(0, 0);
-            this.btnInicioI.Name = "btnInicioI";
-            this.btnInicioI.Size = new System.Drawing.Size(45, 44);
-            this.btnInicioI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnInicioI.TabIndex = 5;
-            this.btnInicioI.TabStop = false;
-            this.btnInicioI.Zoom = 10;
-            this.btnInicioI.Click += new System.EventHandler(this.btnInicioI_Click);
-            // 
-            // btnListarPacientesI
-            // 
-            this.btnListarPacientesI.BackColor = System.Drawing.Color.Transparent;
-            this.btnListarPacientesI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnListarPacientesI.Image = global::ProyectoTrr.Properties.Resources.icons8_revisión_de_salud_50;
-            this.btnListarPacientesI.ImageActive = null;
-            this.btnListarPacientesI.Location = new System.Drawing.Point(0, 0);
-            this.btnListarPacientesI.Name = "btnListarPacientesI";
-            this.btnListarPacientesI.Size = new System.Drawing.Size(45, 44);
-            this.btnListarPacientesI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnListarPacientesI.TabIndex = 5;
-            this.btnListarPacientesI.TabStop = false;
-            this.btnListarPacientesI.Zoom = 10;
-            this.btnListarPacientesI.Click += new System.EventHandler(this.btnListarPacientesI_Click);
-            // 
-            // btnAtenderPacientesI
-            // 
-            this.btnAtenderPacientesI.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtenderPacientesI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAtenderPacientesI.Image = global::ProyectoTrr.Properties.Resources.icons8_charla_varonil_40;
-            this.btnAtenderPacientesI.ImageActive = null;
-            this.btnAtenderPacientesI.Location = new System.Drawing.Point(0, 0);
-            this.btnAtenderPacientesI.Name = "btnAtenderPacientesI";
-            this.btnAtenderPacientesI.Size = new System.Drawing.Size(45, 44);
-            this.btnAtenderPacientesI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAtenderPacientesI.TabIndex = 5;
-            this.btnAtenderPacientesI.TabStop = false;
-            this.btnAtenderPacientesI.Zoom = 10;
-            this.btnAtenderPacientesI.Click += new System.EventHandler(this.btnAtenderPacientesI_Click);
-            // 
-            // btnConsultasI
-            // 
-            this.btnConsultasI.BackColor = System.Drawing.Color.Transparent;
-            this.btnConsultasI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnConsultasI.Image = global::ProyectoTrr.Properties.Resources.icons8_hospital_48;
-            this.btnConsultasI.ImageActive = null;
-            this.btnConsultasI.Location = new System.Drawing.Point(0, 0);
-            this.btnConsultasI.Name = "btnConsultasI";
-            this.btnConsultasI.Size = new System.Drawing.Size(45, 44);
-            this.btnConsultasI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnConsultasI.TabIndex = 5;
-            this.btnConsultasI.TabStop = false;
-            this.btnConsultasI.Zoom = 10;
-            this.btnConsultasI.Click += new System.EventHandler(this.btnConsultasI_Click);
-            // 
-            // btnAddUserI
-            // 
-            this.btnAddUserI.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddUserI.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddUserI.Image = global::ProyectoTrr.Properties.Resources.icons8_gerente_64__1_;
-            this.btnAddUserI.ImageActive = null;
-            this.btnAddUserI.Location = new System.Drawing.Point(0, 0);
-            this.btnAddUserI.Name = "btnAddUserI";
-            this.btnAddUserI.Size = new System.Drawing.Size(45, 44);
-            this.btnAddUserI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAddUserI.TabIndex = 5;
-            this.btnAddUserI.TabStop = false;
-            this.btnAddUserI.Zoom = 10;
-            this.btnAddUserI.Click += new System.EventHandler(this.btnAddUserI_Click);
-            // 
             // btnAddPacienteI
             // 
             this.btnAddPacienteI.BackColor = System.Drawing.Color.Transparent;
@@ -361,50 +396,15 @@
             this.btnAddPacienteI.Zoom = 10;
             this.btnAddPacienteI.Click += new System.EventHandler(this.btnAddPacienteI_Click);
             // 
-            // btnExpandir
+            // PnlContenedor
             // 
-            this.btnExpandir.BackColor = System.Drawing.Color.Transparent;
-            this.btnExpandir.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnExpandir.Image = global::ProyectoTrr.Properties.Resources.icons8_menú_64;
-            this.btnExpandir.ImageActive = null;
-            this.btnExpandir.Location = new System.Drawing.Point(0, 0);
-            this.btnExpandir.Name = "btnExpandir";
-            this.btnExpandir.Size = new System.Drawing.Size(45, 36);
-            this.btnExpandir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExpandir.TabIndex = 4;
-            this.btnExpandir.TabStop = false;
-            this.btnExpandir.Zoom = 10;
-            this.btnExpandir.Click += new System.EventHandler(this.btnExpandir_Click);
-            // 
-            // btnMinizar
-            // 
-            this.btnMinizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinizar.Image = global::ProyectoTrr.Properties.Resources.Minimizar;
-            this.btnMinizar.ImageActive = null;
-            this.btnMinizar.Location = new System.Drawing.Point(613, 0);
-            this.btnMinizar.Name = "btnMinizar";
-            this.btnMinizar.Size = new System.Drawing.Size(45, 36);
-            this.btnMinizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinizar.TabIndex = 1;
-            this.btnMinizar.TabStop = false;
-            this.btnMinizar.Zoom = 10;
-            this.btnMinizar.Click += new System.EventHandler(this.btnMinizar_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::ProyectoTrr.Properties.Resources.icons8_apagar_filled_50__1_;
-            this.btnCerrar.ImageActive = null;
-            this.btnCerrar.Location = new System.Drawing.Point(658, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 36);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Zoom = 10;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.PnlContenedor.BackgroundImage = global::ProyectoTrr.Properties.Resources.Logo;
+            this.PnlContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlContenedor.Location = new System.Drawing.Point(197, 36);
+            this.PnlContenedor.Name = "PnlContenedor";
+            this.PnlContenedor.Size = new System.Drawing.Size(506, 445);
+            this.PnlContenedor.TabIndex = 2;
             // 
             // MenuP
             // 
@@ -421,22 +421,22 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.PnlBarra.ResumeLayout(false);
             this.PnlBarra.PerformLayout();
-            this.pnlMenu.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnListarPacientesI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAtenderPacientesI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConsultasI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddUserI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddPacienteI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicioI)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnListarPacientesI)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAtenderPacientesI)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnConsultasI)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddUserI)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddPacienteI)).EndInit();
             this.ResumeLayout(false);
 
         }

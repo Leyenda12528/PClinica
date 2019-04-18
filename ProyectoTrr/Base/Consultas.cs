@@ -22,7 +22,54 @@ namespace ProyectoTrr.Base
             con = new SqlConnection(Conexion.cadena);
         }
 
-        internal void getEspecialidad(ComboBox cBEspel)
+        public void getUsers(ComboBox cBIdUser)
+        {
+            try
+            {
+                sql = "select id_user from usuarios";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                reader = comando1.ExecuteReader();
+                while (reader.Read())
+                    cBIdUser.Items.Add(reader.GetValue(0));
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+            }
+        }
+
+        public void getDatosUser(Usuario user)
+        {
+            try
+            {
+                sql = "select * from usuarios where id_user = @id";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@id", user.Id_user));
+                con.Open();
+                reader = comando1.ExecuteReader();
+                if (reader.Read())
+                {
+                    user.Nombre = reader.GetValue(1).ToString();
+                    user.Apellido = reader.GetValue(2).ToString();
+                    user.Edad = Convert.ToInt32(reader.GetValue(3));
+                    user.Telefono = reader.GetValue(4).ToString();
+                    user.User = reader.GetValue(5).ToString();
+                    user.Pass = reader.GetValue(6).ToString();
+                    user.ID_especialidad = Convert.ToInt32(reader.GetValue(7));
+                    user.ID_estdo = Convert.ToInt32(reader.GetValue(8));
+                }                
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        public void getEspecialidad(ComboBox cBEspel)
         {
             try
             {

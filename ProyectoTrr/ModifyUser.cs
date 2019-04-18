@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ProyectoTrr
 {
-    public partial class ModificarPaciente : Form
+    public partial class ModifyUser : Form
     {
         private Consultas consul = new Consultas();
-        public ModificarPaciente()
+        public ModifyUser()
         {
             InitializeComponent();
-            consul.getPac(CBIDPAc,0);
+            consul.getUsers(CBIdUser);
         }
         private void mostrar(object frm)
         {
@@ -39,11 +39,19 @@ namespace ProyectoTrr
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CBIDPAc.Text.Length > 0)
+            if (CBIdUser.Text.Length > 0)
             {
-                mostrar(new RegistrarPaciente(CBIDPAc.SelectedIndex));
+                mostrar(new RegistroUsuario(CBIdUser.SelectedIndex));                
             }
-            else MessageBox.Show("Seleccione un ID de Paciente");
+            else MessageBox.Show("Seleccione un ID de Usuario");
+        }
+
+        private void CBIdUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }
