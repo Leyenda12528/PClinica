@@ -16,3 +16,4 @@ C:\Users\jorge\Desktop\ProyectoTrr\ProyectoTrr\obj\Debug\ProyectoTrr.pdb
 C:\Users\jorge\Desktop\ProyectoTrr\ProyectoTrr\obj\Debug\ProyectoTrr.AddPaciente.resources
 C:\Users\jorge\Desktop\ProyectoTrr\ProyectoTrr\obj\Debug\ProyectoTr.MenuP.resources
 C:\Users\jorge\Desktop\ProyectoTrr\ProyectoTrr\obj\Debug\ProyectoTrr.ModificarPaciente.resources
+C:\Users\jorge\Desktop\ProyectoTrr\ProyectoTrr\obj\Debug\ProyectoTrr.DatosUser.resources

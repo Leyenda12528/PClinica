@@ -63,9 +63,29 @@ namespace ProyectoTrr.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_agregar_usuario_grupo_mujer_hombre_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-agregar-usuario-grupo-mujer-hombre-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ambulancia_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ambulancia-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_apagar_filled_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-apagar-filled-50 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace ProyectoTrr.Properties {
         internal static System.Drawing.Bitmap icons8_charla_varonil_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-charla-varonil-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_editar_propiedad_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-editar-propiedad-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +226,16 @@ namespace ProyectoTrr.Properties {
         internal static System.Drawing.Bitmap icons8_revisión_de_salud_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-revisión-de-salud-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_salida_filled_50_b {
+            get {
+                object obj = ResourceManager.GetObject("icons8-salida-filled-50_b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

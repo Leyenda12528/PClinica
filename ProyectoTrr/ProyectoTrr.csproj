@@ -59,6 +59,12 @@
     <Compile Include="Base\Conexion.cs" />
     <Compile Include="Base\Consultas.cs" />
     <Compile Include="Base\Help1.cs" />
+    <Compile Include="DatosUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosUser.Designer.cs">
+      <DependentUpon>DatosUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Consulta.cs" />
     <Compile Include="Datos\Paciente.cs" />
     <Compile Include="Datos\Sintomas.cs" />
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="AddPaciente.resx">
       <DependentUpon>AddPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosUser.resx">
+      <DependentUpon>DatosUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -198,6 +207,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-información-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-agregar-usuario-grupo-mujer-hombre-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-editar-propiedad-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-salida-filled-50_b.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

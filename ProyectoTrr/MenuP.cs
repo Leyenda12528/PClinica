@@ -88,7 +88,7 @@ namespace ProyectoTr
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            mostrar(new RegistroUsuario());
+            mostrar(new DatosUser());
         }
 
         private void btnConsultas_Click(object sender, EventArgs e)
@@ -130,6 +130,20 @@ namespace ProyectoTr
             Login call = new Login();
             call.Show();
             this.Dispose();
+        }
+        private int posX = 0, posY = 0;
+        private void PnlBarra_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button!=MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }
