@@ -56,6 +56,12 @@
     <Compile Include="AddPaciente.Designer.cs">
       <DependentUpon>AddPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtenderConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtenderConsulta.Designer.cs">
+      <DependentUpon>AtenderConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Base\Conexion.cs" />
     <Compile Include="Base\Consultas.cs" />
     <Compile Include="Base\Help1.cs" />
@@ -66,6 +72,7 @@
       <DependentUpon>DatosUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\Consulta.cs" />
+    <Compile Include="Datos\Consulta_Sintomas.cs" />
     <Compile Include="Datos\Paciente.cs" />
     <Compile Include="Datos\Sintomas.cs" />
     <Compile Include="Datos\Usuario.cs" />
@@ -115,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="AddPaciente.resx">
       <DependentUpon>AddPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtenderConsulta.resx">
+      <DependentUpon>AtenderConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DatosUser.resx">
       <DependentUpon>DatosUser.cs</DependentUpon>
@@ -228,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-apagar-filled-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sala-de-espera-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,7 +33,7 @@ namespace ProyectoTr
                 btnAdd.Text = "Actualizar";
                 txtID.Text = v + "";
                 pacu.ID_pac = v;
-                consul1.getDatosPac(pacu);
+                consul1.GetDatosPac(pacu);
                 MostrandoDatos();
             }
         }

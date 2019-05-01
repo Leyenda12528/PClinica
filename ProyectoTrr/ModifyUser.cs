@@ -18,7 +18,7 @@ namespace ProyectoTrr
         public ModifyUser()
         {
             InitializeComponent();
-            consul.getUsers(CBIdUser);
+            consul.GetUsers(CBIdUser);
         }
         private void mostrar(object frm)
         {

@@ -18,7 +18,7 @@ namespace ProyectoTrr
         public ModificarPaciente()
         {
             InitializeComponent();
-            consul.getPac(CBIDPAc,0);
+            consul.GetPac(CBIDPAc,0);
         }
         private void mostrar(object frm)
         {

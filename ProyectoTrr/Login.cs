@@ -20,23 +20,28 @@ namespace ProyectoTr
         public Login()
         {
             InitializeComponent();
-            /*DateTime horact = DateTime.Now;
-            DateTime horatot = horact.AddMinutes(40);
-            String txthora = horatot.TimeOfDay.ToString();
-            MessageBox.Show("0- "+txthora);
-            DateTime horaing = DateTime.Parse(txthora);
-            MessageBox.Show("1- "+horaing.TimeOfDay.ToString());
-            horatot = DateTime.Now;
-            horatot = horatot.AddMinutes(40);
-            if (horatot.TimeOfDay >= horaing.TimeOfDay)
-            {
-                MessageBox.Show("menor "+horaing.TimeOfDay.ToString()+"\n mayo "+horatot.TimeOfDay.ToString());
-            }
-            else if (horatot.TimeOfDay == horaing.TimeOfDay)
-            {
-                MessageBox.Show("iguales");
-            }
-            else MessageBox.Show("no son iguales");*/
+            //DateTime horact = DateTime.Now;
+            //DateTime horatot = horact.AddMinutes(40);
+
+            //String txthora = horatot.TimeOfDay.ToString();
+
+            ////MessageBox.Show("0- " + txthora);
+
+            //DateTime horaing = DateTime.Parse(txthora);
+
+            ////MessageBox.Show("1- " + horaing.TimeOfDay.ToString());
+
+            //horatot = DateTime.Now;
+            //horatot = horatot.AddMinutes(40);
+            //if (horatot.TimeOfDay >= horaing.TimeOfDay)
+            //{
+            //    MessageBox.Show("menor " + horaing.TimeOfDay.ToString() + "\n mayo " + horatot.TimeOfDay.ToString());
+            //}
+            //else if (horatot.TimeOfDay == horaing.TimeOfDay)
+            //{
+            //    MessageBox.Show("iguales");
+            //}
+            //else MessageBox.Show("no son iguales");
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -49,9 +54,9 @@ namespace ProyectoTr
 
             if (txtPass.Text.Length > 0 && txtUser.Text.Length > 0)
             {
-                if (consulta.exist(txtUser.Text, txtPass.Text, usuario))
+                if (consulta.Exist(txtUser.Text, txtPass.Text, usuario))
                 {
-                    consulta.getDatos(usuario);
+                    consulta.GetDatos(usuario);
                     this.Hide();
                     MenuP menu = new MenuP(usuario);
                     menu.Show();

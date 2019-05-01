@@ -28,14 +28,14 @@ namespace ProyectoTr
 
         private void Load(int i)
         {
-            int d = consul.getIdNewConsult();
+            int d = consul.GetIdNewConsult();
             txtIDConsul.Text = d + "";
-            consul.getPac(CBIdPac);
-            consul.getDocs(CBIdDoc);            
+            consul.GetPac(CBIdPac);
+            consul.GetDocs(CBIdDoc);            
             txtPuntaje.Text = "0";
             if (i == 0)
             {
-                consul.getSintomas(ListSintomas, listaSin);
+                consul.GetSintomas(ListSintomas, listaSin);
                 ListSintomas.CheckOnClick = true;
             }
         }
@@ -75,6 +75,12 @@ namespace ProyectoTr
             consulC.Id_doc = Convert.ToInt32(CBIdDoc.SelectedIndex);
             consulC.Puntaje = punt;
             consulC.Categoria = cat;
+
+            int mins = consul.GetTime(cat);
+            DateTime horasal = DateTime.Now;
+            horasal = horasal.AddMinutes(mins);
+
+            consulC.Salida = horasal.TimeOfDay.ToString();
             consulC.ListaSintomas = listaID;
             consulC.Id_estado = 0;
         }

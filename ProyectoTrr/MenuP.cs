@@ -24,6 +24,8 @@ namespace ProyectoTr
             InitializeComponent();
             lblNombre.Text = usuario.Nombre;
             lblEspecialidad.Text = usuario.Especialidad;
+            if (usuario.ID_especialidad != 3)
+                panel2.Hide();
         }
 
         private void mostrar(object frm)
@@ -117,7 +119,7 @@ namespace ProyectoTr
 
         private void btnAtenderPacientes_Click(object sender, EventArgs e)
         {
-
+            mostrar(new AtenderConsulta());
         }
 
         private void btnListarPacientes_Click(object sender, EventArgs e)

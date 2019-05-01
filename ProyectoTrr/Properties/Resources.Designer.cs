@@ -233,6 +233,16 @@ namespace ProyectoTrr.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_sala_de_espera_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sala-de-espera-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_salida_filled_50_b {
             get {
                 object obj = ResourceManager.GetObject("icons8-salida-filled-50_b", resourceCulture);

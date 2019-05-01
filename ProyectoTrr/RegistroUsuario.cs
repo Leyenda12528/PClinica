@@ -35,7 +35,7 @@ namespace ProyectoTr
                 btnAdd.Text = "Modificar";
                 PnlD.Show();
                 user.Id_user = v;
-                consul.getDatosUser(user);
+                consul.GetDatosUser(user);
                 MostrarDatos();
             }
         }
@@ -55,8 +55,8 @@ namespace ProyectoTr
         private void Load()
         {
             CBEspel.Items.Clear();
-            consul.getEspecialidad(CBEspel);
-            if (v == -1) consul.getNewIdUser(user);
+            consul.GetEspecialidad(CBEspel);
+            if (v == -1) consul.GetNewIdUser(user);
         }
 
         //*

@@ -7,6 +7,7 @@ using System.Data.OleDb;
 using System.Data.SqlClient;
 using ProyectoTrr.Datos;
 using System.Windows.Forms;
+using System.Data;
 
 namespace ProyectoTrr.Base
 {
@@ -17,12 +18,13 @@ namespace ProyectoTrr.Base
         private String sql;
         private SqlCommand comando = null;
         private SqlDataReader reader = null;
+        private SqlDataAdapter adaptador = null;
 
         public Consultas(){
             con = new SqlConnection(Conexion.cadena);
         }
 
-        public void getUsers(ComboBox cBIdUser)
+        public void GetUsers(ComboBox cBIdUser)
         {
             try
             {
@@ -36,11 +38,121 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
             }
         }
 
-        public void getDatosUser(Usuario user)
+        internal int CantConsultas()
+        {
+            try
+            {
+                sql = "select count(*) from consulta";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                reader = comando1.ExecuteReader();
+                int d = 0;
+                if (reader.Read())
+                    d = Convert.ToInt32(reader.GetValue(0));
+                con.Close();
+                return d;
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        internal void ConsultaPlus(int iD_Consulta, int v, String tiempo)
+        {
+            try
+            {
+                sql = "update consulta set id_categoria = @n, atencion = @t"
+                    + " where id_consulta = @id";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@n", v));
+                comando1.Parameters.Add(new SqlParameter("@t", tiempo));
+                comando1.Parameters.Add(new SqlParameter("@id", iD_Consulta));
+                con.Open();
+                comando1.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+            }
+        }
+
+        internal void Consultas_Sintomas(ListBox lBConsultas_Sintomas, int idConsulta)
+        {
+            try
+            {
+                lBConsultas_Sintomas.Items.Clear();
+                sql = "select sintoma.sintoma from consulta_sintoma"
+                    + " inner join sintoma on consulta_sintoma.id_sintoma = sintoma.id_sin "
+                    + " where consulta_sintoma.id_consulta = @n";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                comando1.Parameters.Add(new SqlParameter("@n", idConsulta));
+                con.Open();
+                reader = comando1.ExecuteReader();
+                while (reader.Read())
+                    lBConsultas_Sintomas.Items.Add(reader.GetValue(0));
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+            }
+        }
+
+        internal void FinConsulta(int idConsulta)
+        {
+            try
+            {
+                sql = "update consulta set id_estado = 1 where id_consulta = @id";
+                SqlCommand comando1 = new SqlCommand(sql, con);                
+                comando1.Parameters.Add(new SqlParameter("@id", idConsulta));
+                con.Open();
+                comando1.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Consulta Atendida Correctamente!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+            }
+        }
+
+        public void DatosConsultas(DataGridView dGVConsultas)
+        {
+            try
+            {
+                sql = "select id_consulta, id_paciente, id_doc as id_doctor, "
+                    + " fechalleg as Hora_Llegada, id_categoria, "
+                    + " puntaje_obt as puntaje, atencion as Hora_atencion, id_estado from consulta"
+                    + " where id_estado = 0"
+                    + " order by id_categoria asc";
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                adaptador = new SqlDataAdapter(comando1);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dGVConsultas.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+            }
+        }
+
+        public void GetDatosUser(Usuario user)
         {
             try
             {
@@ -64,6 +176,7 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
@@ -89,16 +202,39 @@ namespace ProyectoTrr.Base
                 con.Open();
                 comando1.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Usuario Modificado");
+                MessageBox.Show("Usuario Modificado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        public void getEspecialidad(ComboBox cBEspel)
+        public int GetTime(int cat)
+        {
+            try
+            {
+                sql = "select tiempo from categoria where id_cat = " + cat;
+                SqlCommand comando1 = new SqlCommand(sql, con);
+                con.Open();
+                reader = comando1.ExecuteReader();
+                int d = 0;
+                if (reader.Read())
+                    d = Convert.ToInt32(reader.GetValue(0));
+                con.Close();
+                return d;                
+            }
+            catch (Exception e)
+            {
+                con.Close();
+                MessageBox.Show("" + e);
+                throw;
+            }
+        }
+
+        public void GetEspecialidad(ComboBox cBEspel)
         {
             try
             {
@@ -112,12 +248,13 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        public void getNewIdUser(Usuario user)
+        public void GetNewIdUser(Usuario user)
         {
             try
             {
@@ -131,6 +268,7 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
@@ -156,10 +294,11 @@ namespace ProyectoTrr.Base
                 con.Open();
                 comando1.ExecuteNonQuery();
                 con.Close();                
-                MessageBox.Show("Usuario Agregado!!");
+                MessageBox.Show("Usuario Agregado!!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
@@ -183,12 +322,13 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        public bool exist(string user, string pass, Usuario usuario)
+        public bool Exist(string user, string pass, Usuario usuario)
         {
             try
             {
@@ -211,12 +351,13 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        internal void getDatosPac(Paciente pacu)
+        internal void GetDatosPac(Paciente pacu)
         {
             try
             {
@@ -243,6 +384,7 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
@@ -269,10 +411,11 @@ namespace ProyectoTrr.Base
                 con.Open();
                 comando1.ExecuteNonQuery();
                 con.Close();                
-                MessageBox.Show("Paciente Modificado");
+                MessageBox.Show("Paciente Modificado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
@@ -283,28 +426,30 @@ namespace ProyectoTrr.Base
             try
             {
                 sql = "insert into consulta (id_consulta, id_paciente, id_doc, fechalleg, id_categoria,"
-                    + "puntaje_obt, id_estado) values (@id, @idp, @idd, GETDATE(), @categ, @punt, @id_est)";
+                    + "puntaje_obt, atencion,id_estado) values (@id, @idp, @idd, GETDATE(), @categ, @punt, @out, @id_est)";
                 SqlCommand comando1 = new SqlCommand(sql, con);
                 comando1.Parameters.Add(new SqlParameter("@id", consulC.Id_consulta));
                 comando1.Parameters.Add(new SqlParameter("@idp", consulC.Id_pac));
                 comando1.Parameters.Add(new SqlParameter("@idd", consulC.Id_doc));
                 comando1.Parameters.Add(new SqlParameter("@categ", consulC.Categoria));
                 comando1.Parameters.Add(new SqlParameter("@punt", consulC.Puntaje));
+                comando1.Parameters.Add(new SqlParameter("@out", consulC.Salida));
                 comando1.Parameters.Add(new SqlParameter("@id_est", consulC.Id_estado));                
                 con.Open();
                 comando1.ExecuteNonQuery();
                 con.Close();
-                addConsul_Sin(consulC);
-                MessageBox.Show("Consulta Agregada");
+                AddConsul_Sin(consulC);
+                MessageBox.Show("Consulta Agregada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        private void addConsul_Sin(Consulta consulC)
+        private void AddConsul_Sin(Consulta consulC)
         {
             try
             {
@@ -320,12 +465,13 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }
         }
 
-        internal void getSintomas(CheckedListBox listSintomas, List<Sintomas> listaSin)
+        internal void GetSintomas(CheckedListBox listSintomas, List<Sintomas> listaSin)
         {
             try
             {
@@ -347,11 +493,12 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
             }
         }
 
-        internal void getDocs(ComboBox cBIdDoc)
+        internal void GetDocs(ComboBox cBIdDoc)
         {
             try
             {
@@ -365,10 +512,11 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
             }
         }
-        internal void getPac(ComboBox cBIdPac, int i)
+        internal void GetPac(ComboBox cBIdPac, int i)
         {//todos los pacientes 
             try
             {
@@ -382,11 +530,12 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
             }
         }
 
-        internal void getPac(ComboBox cBIdPac)
+        internal void GetPac(ComboBox cBIdPac)
         {//todos los paciente Activos
             try
             {
@@ -400,11 +549,12 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
             }
         }
 
-        internal int getIdNewConsult()
+        internal int GetIdNewConsult()
         {
             int Cn = 0;
             try
@@ -420,6 +570,7 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show("" + e);
                 throw;
             }            
@@ -445,7 +596,7 @@ namespace ProyectoTrr.Base
                 con.Open();
                 comando1.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Nuevo Paciente Ingresado Exitosamente\nSu ID es " + pac.ID_pac);
+                MessageBox.Show("Nuevo Paciente Ingresado Exitosamente\nSu ID es " + pac.ID_pac, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -490,7 +641,7 @@ namespace ProyectoTrr.Base
                 comando = new SqlCommand(sql, con);
                 comando.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("el ID del nuevo paciente es : " + contador);
+                MessageBox.Show("el ID del nuevo paciente es : " + contador, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception e)
             {
@@ -498,7 +649,7 @@ namespace ProyectoTrr.Base
             }
         }
 
-        public void getDatos(Usuario usuario)
+        public void GetDatos(Usuario usuario)
         {
             try
             {
@@ -522,6 +673,7 @@ namespace ProyectoTrr.Base
             }
             catch (Exception e)
             {
+                con.Close();
                 MessageBox.Show(""+e);
             }
         } 

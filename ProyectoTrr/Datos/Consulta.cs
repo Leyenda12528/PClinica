@@ -10,13 +10,10 @@ namespace ProyectoTrr.Datos
     {
         private int id_consulta;
         private int id_pac;
-        private int id_doc;
-        private String fIn;
+        private int id_doc;        
         private int categoria;
-        private int puntaje;
-        private String fout;
-        private String hin;
-        private String hout;
+        private int puntaje;                
+        private String salida;
         private int id_estado;
         private List<int> listaSintomas;
 
@@ -33,22 +30,10 @@ namespace ProyectoTrr.Datos
             set { id_estado = value; }
         }
 
-        public String Hout
+        public String Salida
         {
-            get { return hout; }
-            set { hout = value; }
-        }
-
-        public String Hin
-        {
-            get { return hin; }
-            set { hin = value; }
-        }
-
-        public String Fout
-        {
-            get { return fout; }
-            set { fout = value; }
+            get { return salida; }
+            set { salida = value; }
         }
 
         public int Puntaje
@@ -61,12 +46,6 @@ namespace ProyectoTrr.Datos
         {
             get { return categoria; }
             set { categoria = value; }
-        }
-
-        public String Fin
-        {
-            get { return fIn; }
-            set { fIn = value; }
         }
 
         public int Id_doc
