@@ -1,0 +1,170 @@
+create database Proyecto;
+use Proyecto;
+
+create table especialidad(
+id int primary key,
+Nombre_espec varchar(25));
+
+create table usuarios(
+id_user int primary key,
+nombre varchar(25),
+apellido varchar(25),
+edad int,
+telefono varchar(9),
+usuario varchar(20),
+pass varchar(100),
+id_especial int foreign key references especialidad(id),
+id_estado_user int foreign key references estado_user(id_estado_user));
+
+create table paciente(
+id_pac int primary key,
+nombre varchar(25),
+apellido varchar(25),
+edad int,
+telefono varchar(9),
+direccion varchar(100),
+tipoSangre varchar(10),
+Nombre_contacto varchar(50),
+telefono_contacto varchar(9),
+id_estado int foreign key references estado_user(id_estado_user));
+
+create table sintoma(
+id_sin int primary key,
+sintoma varchar(50),
+puntaje int);
+
+create table categoria(
+id_cat int primary key,
+tipo varchar(20),
+tiempo int,
+puntaje_min int,
+puntaje_max int);
+
+create table estado(
+id_estado int primary  key,
+estado varchar(10));
+
+create table consulta(
+id_consulta int primary key,
+id_paciente int foreign key references paciente(id_pac),
+id_doc int foreign key references usuarios(id_user),
+fechalleg datetime,
+id_categoria int foreign key references categoria(id_cat),
+puntaje_obt int,
+fechaaten datetime,
+horain varchar(20),
+horaout varchar(20),
+id_estado int foreign key references estado(id_estado));
+
+create table consulta_sintoma(
+id_consulta int foreign key references consulta(id_consulta),
+id_sintoma int foreign key references sintoma(id_sin)
+);
+
+create table estado_user(
+id_estado_user int primary  key,
+estado varchar(10));
+
+*************************************************************************
+insert into estado_user values
+(0,'Activo'),
+(1,'Inactivo');
+
+insert into estado values
+(0,'Activa'),
+(1,'Inactiva');
+
+insert into especialidad values
+(0,'oftalmologo'),
+(1,'General'),
+(2,'enfermera'),
+(3,'Director');
+
+insert into categoria values
+(0,'Critico',0,200,1000),
+(1,'Emergencia',10,151,199),
+(2,'Urgencia',60,100,150),
+(3,'Estandar',120,35,99),
+(4,'No urgente',240,0,34);
+
+
+insert into sintoma values
+(0,'Ninguna respuesta verbal',90),
+(1,'Sonidos verbales incompresibles ',55),
+(2,'Palabras inapropiadas ',35),
+(3,'Desorientado',15),
+(4,'Orientado y conversando',10),
+(5,'Ninguna respuesta ocular',75),
+(6,'Seguir con la vista indicaciones verbales',35),
+(7,'Ninguna respuesta motora ',100),
+(8,'Extensión anormal ',68),
+(9,'Flexión anormal ',51),
+(10,'Retirada y flexión ',35);
+
+insert into sintoma values
+(11,'Localiza el dolor ',18),
+(12,'Obedece órdenes verbales',11),
+(13,'Tos emetizante ',55),
+(14,'Apnea',25),
+(15,'Tos bitonal',15),
+(16,'hemoptisis',40),
+(17,'Sincope ',65),
+(18,'Infarto de miocardio ',100),
+(19,'Dolor aórtico ',90),
+(20,'Hemorragia interna',60),
+(21,'Perdida de un miembro',75),
+(22,'Introducción de objeto corto punzante',40),
+(23,'Herida por arma de fuego',50);
+
+
+insert into usuarios values (0, 'Leyenda','Eterna',22,'7777-1111','leyenda','1234',0)
+insert into usuarios values (1,'enfer','apel enfer',23,'1234-1234','enfer1','123',2);
+*********************************************************************************
+
+
+
+
+
+
+************************************************
+
+select * from categoria;
+select * from sintoma;
+
+select sysdatetime()
+select getdate()
+create table dato(
+id int primary key,
+dato datetime);
+select * from dato;
+insert into dato values(1, GETDATE());
+
+
+
+select * from especialidad;
+select * from usuarios;
+
+select * from consulta;
+select * from estado;
+select * from paciente; 
+
+SELECT MAX(id_estado) from estado;
+
+
+create table pr(
+ide int primary key,
+dato datetime
+);
+select * from pr;
+insert into pr values (0,GETDATE());
+
+**********************************************
+select id_pac from paciente where id_estado=0;
+select id_user from usuarios where id_especial <> 2 and id_estado_user = 0;
+
+
+
+
+
+
+
